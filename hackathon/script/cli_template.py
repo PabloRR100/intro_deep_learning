@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-from similarity import PokemonSimilarity
+from similarity_template import PokemonSimilarity
 import sys
 
 def main():
@@ -31,13 +31,14 @@ def main():
     try:
         # TODO: Initialize the similarity engine
         # Hint: Create an instance of PokemonSimilarity
+        similarity_engine = PokemonSimilarity()
+
         
         # TODO: Find the closest Pokemon match
         # Hint: Use the find_closest_pokemon method
+        closest_pokemon = similarity_engine.find_closest_pokemon(args.img_url)
+        print(f"Closest Pokemon: {closest_pokemon}")
         
-        # TODO: Display the results
-        # Hint: Format the output nicely with emojis or other visual elements
-        pass
         
     except Exception as e:
         print(f"❌ Error: {str(e)}", file=sys.stderr)
